@@ -1,18 +1,18 @@
 const path = require('path')
 
 module.exports = {
-  entry:'./src/index.ts', //entryセクションは最初に読み込むファイルを指定する。
+  entry:'./src/index.tsx', //entryセクションは最初に読み込むファイルを指定する。
   module:{
     rules:[
       {
-        test:/\.ts$/,
+        test:/\.tsx?$/,
         use:'ts-loader',
         exclude:/node_modules/,
       },
     ],
   },
   resolve:{
-    extensions:['.ts'],
+    extensions:['.js','.ts','.tsx'],
   },
   output:{
     path:path.resolve(__dirname,'dist'),//コンフィグファイルを置いたディレクトリにdist
